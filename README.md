@@ -1,6 +1,7 @@
 # CASRCNN
 Context Aware Medical Image Super-Resolution Using Convolution Neural Networks
 
+Pratham Soni and Matthew Dong
 # Overview
 An overview can be found in the [abstract](Abstract.pdf).
 
