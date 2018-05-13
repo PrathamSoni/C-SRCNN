@@ -16,3 +16,5 @@ Take care to set the correct hyperparameters and training/testing/tensorboard di
 Training: Use command `python main.py`.
 
 Testing: Use command `python main.py --is_train false`.
+
+Missing checkpoint directories will be automatically created with appropriate sub folders based on hyper parameters.
