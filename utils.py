@@ -148,6 +148,7 @@ def generate_patch(h,w,input_,label_,padding,config):
             ny+=1
             # We create the inputs and labels.
             # We take care to create all surrounding areas of the patch.
+            # This is done through sequential generation using the original coordinates as a basis.
 
             # left/up
             sub_input1 = input_[x - config.image_size:x, y - config.image_size:y]  # [33 x 33]
@@ -190,7 +191,7 @@ def generate_patch(h,w,input_,label_,padding,config):
            
             # nested for loops to stack the high channel inputs
  
-            #edge cases
+            #edge cases to account for the fact that all neighbors may not exist
             if ((x -config.image_size)<0 or (x + config.image_size)>0 or (y -config.image_size)<0 or (y + config.image_size)>0):
                 for i in range(0, config.c_dim):
                     temp_input[:,:,i] = sub_input5
